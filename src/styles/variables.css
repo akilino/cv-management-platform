@@ -1,0 +1,27 @@
+/* DESIGN SYSTEM VARIABLES
+  Update these hex codes and fonts to match your new project's brand identity.
+*/
+:root {
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Brand Colors */
+  --color-primary: #0070f3;
+  --color-primary-hover: #0051b3;
+  --color-secondary: #7928ca;
+  
+  /* Neutral Colors */
+  --color-bg: #ffffff;
+  --color-surface: #f4f4f5;
+  --color-text-main: #18181b;
+  --color-text-muted: #71717a;
+  --color-border: #e4e4e7;
+
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+
+  /* Layout */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --transition-fast: 0.2s ease;
+}
