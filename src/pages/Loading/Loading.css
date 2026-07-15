@@ -1,0 +1,43 @@
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fafc; /* Um fundo quase branco, muito suave */
+  z-index: 9999; /* Garante que fica por cima de tudo (Navbar, tabelas, etc) */
+}
+
+/* O Spinner (Círculo Giratório) */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e2e8f0; /* Cor do círculo de fundo (cinza claro) */
+  border-top: 5px solid #3b82f6; /* Cor da parte que gira (azul moderno) */
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* Rotação contínua */
+}
+
+/* O Texto */
+.loading-text {
+  margin-top: 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #475569; /* Cinza escuro elegante */
+  letter-spacing: 0.05em;
+}
+
+/* Animação que faz o spinner girar */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

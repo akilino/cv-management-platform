@@ -1,0 +1,150 @@
+.company-info {
+  display: flex;
+  align-items: center;
+}
+
+.role-info {
+  display: flex;
+  align-items: center;
+  font-size: larger;
+}
+
+.custom-badge {
+  display: inline-flex;
+  align-items:center;
+  justify-content: center;
+  line-height: 1;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.role-badge-color {
+  border: 1px solid #3d52d5;
+  background-color: #3d52d5 !important;
+}
+
+.technology-badge-color {
+  border: 1px solid #090c9b;
+  background-color: #090c9b !important;
+}
+
+.methodology-badge-color{
+  border: 1px solid #3c3744;
+  background-color: #3c3744 !important;
+}
+
+.company-location {
+  font-weight: 600;
+  color: #222;
+}
+
+.start-end-dates {
+  display: flex;
+  align-items: center;
+}
+
+.experience-duration {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.location {
+  margin: 0 0 0 6px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.project-description p {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  color: #344054;
+  line-height: 1.7;
+}
+
+.project-highlights,
+.project-description,
+.project-technologies {
+  padding: 1rem;
+}
+
+.project-highlights p {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  color: #344054;
+  line-height: 1.7;
+}
+
+.experience-section-shell {
+  padding: 2rem 0;
+}
+
+.technology-badge {
+  margin: 0 0.5rem 0 0;
+}
+
+.methodology-header{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.experience-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Garante que o cartão serve de referência para o posicionamento absoluto */
+.experience-card {
+  position: relative;
+  overflow: visible; /* Permite que a data "saia" para cima da borda */
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(18, 38, 63, 0.08);
+}
+
+/* Posiciona a data no meio da borda superior */
+.experience-card-date-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Centraliza perfeitamente no eixo X e Y sobre a borda */
+
+  /* Ajusta o fundo para a mesma cor do fundo do teu cartão (geralmente branco) */
+  background-color: #ffffff;
+
+  padding: 0 12px; /* Espaço em branco à esquerda/direita para "apagar" a borda */
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6c757d;
+  z-index: 2; /* Garante que fica por cima da linha da borda */
+  white-space: nowrap;
+}
+
+.experience-card-body {
+  padding: 2rem;
+}
+
+@media (max-width: 767.98px) {
+  .experience-section-shell {
+    padding: 1rem 0;
+  }
+}

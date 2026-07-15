@@ -1,15 +1,53 @@
-import { Home } from "./pages/Home/Home";
+import { Dashboard } from "./pages/Dashboard/Dashboard";
+import { ProfilePage } from "./pages/Profile/ProfilePage";
+import LoadingPage from "./pages/Loading/Loading"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login/Login";
+import { useAuth } from "./context/AuthContext";
 
-/**
- * App root wrapper
- * This is where you would normally drop your React Router, App Context Providers
- * or global notification systems (like Toast container boundaries).
- */
+// A "Gatekeeper" component
+const ProtectedRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+
+  if (loading) return <LoadingPage />;
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
 function App() {
   return (
-    <>
-      <Home />
-    </>
+    <BrowserRouter>
+      <Routes>
+        {/* 1. Public Route */}
+        <Route path="/login" element={<Login />} />
+
+        {/* 2. Home Page */}
+        <Route
+          path="/profiles"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile/:profileId"
+          element={
+            <ProtectedRoute>
+              <ProfilePage />
+            </ProtectedRoute>
+          }
+        />
+        
+        {/* Default redirect */}
+        <Route path="*" element={<Navigate to="/profiles" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
